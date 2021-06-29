@@ -9,8 +9,8 @@ import org.jgrapht.graph.SimpleWeightedGraph;
 import it.polito.tdp.genes.db.GenesDao;
 
 public class Model {
-		List<Genes> essentialGenes;
-		Graph<Genes, DefaultWeightedEdge> grafo; 
+		private List<Genes> essentialGenes;
+		private Graph<Genes, DefaultWeightedEdge> grafo; 
 		
 		public String CreaGrafo() {
 			GenesDao dao= new GenesDao();
@@ -18,7 +18,7 @@ public class Model {
 			this.grafo= new SimpleWeightedGraph<>(DefaultWeightedEdge.class);
 			
 			Graphs.addAllVertices(this.grafo, this.essentialGenes);
-			return String.format("Grafo creato con successo %d vertici e %d archi", this.grafo.vertexSet().size(), this.grafo.edgeSet().size());
+			return String.format("Grafo creato con successo %d vertici e %d archi \n", this.grafo.vertexSet().size(), this.grafo.edgeSet().size());
 		}
 	
 }
