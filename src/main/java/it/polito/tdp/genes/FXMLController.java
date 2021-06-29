@@ -46,7 +46,8 @@ public class FXMLController {
 
     @FXML
     void doCreaGrafo(ActionEvent event) {
-    	
+    	String msg=model.CreaGrafo();
+    	txtResult.appendText(msg);
 
     }
 

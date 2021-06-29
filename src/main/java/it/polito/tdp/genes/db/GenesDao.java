@@ -12,8 +12,8 @@ import it.polito.tdp.genes.model.Genes;
 
 public class GenesDao {
 	
-	public List<Genes> getAllGenes(){
-		String sql = "SELECT DISTINCT GeneID, Essential, Chromosome FROM Genes";
+	public List<Genes> getAllEssentialGenes(){
+		String sql = "SELECT DISTINCT GeneID, Essential, Chromosome FROM genes WHERE Essential='Essential';";
 		List<Genes> result = new ArrayList<Genes>();
 		Connection conn = DBConnect.getConnection();
 
